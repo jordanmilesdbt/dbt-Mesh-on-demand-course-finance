@@ -4,12 +4,11 @@ with orders as (
 
 agg as (
     select
-        order_date,
-        location_name, 
+        order_date, 
         count(order_id) as order_count,
         sum(order_total) as orders_revenue
     from orders 
-    group by 1,2
+    group by 1
 )
 
 select * from agg
